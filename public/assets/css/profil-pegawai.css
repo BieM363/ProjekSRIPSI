@@ -1,0 +1,138 @@
+/* public/css/profil-pegawai.css */
+
+.form-container {
+  background: #f9f9f9;
+  padding: 25px;
+  max-width: 600px;
+  margin: 30px auto;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-right: 50px;
+}
+
+.form-group label {
+  width: 150px;
+  margin-right: 50px;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-group input {
+  flex: 1;
+  padding: 8px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline-color: #007bff;
+}
+
+.error {
+  margin-left: 200px;
+  color: red;
+  font-size: 13px;
+}
+
+/* Wrapper untuk search + tabel */
+.table-wrapper {
+  width: 100%;
+  max-width: 1000px;   /* sebelumnya 800px, sekarang lebih lebar */
+  margin: 30px auto;
+}
+
+/* Search input: ambil lebar penuh wrapper */
+.search-container {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;          /* jarak 10px antara input & button */
+  width: 100%;        /* span se‑wrapper */
+  margin-bottom: 20px;
+}
+
+/* Input field */
+.search-container input[type="text"] {
+  width: 100%;        /* isi seluruh kolom grid */
+  padding: 12px 16px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px; /* sudut bulat semua sisi */
+  box-sizing: border-box;
+  width: 894px;
+}
+
+/* Tombol Cari */
+.search-container button {
+  padding: 12px 20px;
+  font-size: 16px;
+  border: 1px solid #535ba0;
+  background: #535ba0;
+  color: #fff;
+  border-radius: 4px; /* sudut bulat semua sisi */
+  cursor: pointer;
+  width: 92px;
+}
+
+/* Hover tombol */
+.search-container button:hover {
+  background: #393e6b;
+}
+
+/* Tabel pegawai: full width wrapper */
+.pegawai-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 16px;       /* teks di tabel lebih besar */
+}
+
+.pegawai-table th,
+.pegawai-table td {
+  border: 1px solid #ddd;
+  padding: 16px 20px;    /* ruang sel lebih lapang */
+  text-align: left;
+}
+
+.pegawai-table th {
+  background: #535ba0;
+  color: #fff;
+  font-weight: 600;
+}
+
+.pegawai-table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.pegawai-table tr:hover {
+  background: #f1f1f1;
+}
+
+/* Pagination wrapper centering */
+.pagination-wrapper {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Delete button */
+.btn-delete {
+  padding: 6px 12px;
+  background: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+}
+.btn-delete:hover {
+  background: #c82333;
+}
