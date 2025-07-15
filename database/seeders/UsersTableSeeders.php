@@ -11,15 +11,12 @@ use Illuminate\Support\Facades\Hash;
 
 class UsersTableSeeders extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
-    public function run(): void
+    public function run()
     {
-        DB::table('users')->insert([
-            'name'=>'Penjaga',
-            'email'=>'admin@email.com',
-            'password'=>Hash::make('123')
+        User::create([
+            'name'     => 'Admin Pertama',
+            'email'    => 'admin@example.com',
+            'password' => Hash::make('123456'),
         ]);
     }
 }

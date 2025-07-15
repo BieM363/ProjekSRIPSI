@@ -1,14 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-//import product controller
-// use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PegawaiController;
-
-//route resource for products
-// Route::resource('/products', ProductController::class);
+use App\Http\Controllers\IndicatorParameterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,61 +11,52 @@ use App\Http\Controllers\PegawaiController;
 |--------------------------------------------------------------------------
 */
 
-// Halaman login
-Route::get('/login', [AuthController::class, 'showLoginForm'])
-    ->name('login');
-
-// Proses login
-Route::post('/login', [AuthController::class, 'login'])
-    ->name('login.process');
-
-// Group route yang butuh autentikasi
-Route::middleware('auth')->group(function () {
-    // Dashboard
-    Route::get('/home/dashboard', function () {
-        return view('home.dashboard');
-    })->name('dashboard');
-
-    // Logout
-    Route::post('/logout', [AuthController::class, 'logout'])
-        ->name('logout');
-});
-
-// (Optional) Redirect root ke dashboard atau login
+// Redirect root berdasarkan status autentikasi
 Route::get('/', function () {
     return auth()->check()
         ? redirect()->route('dashboard')
         : redirect()->route('login');
 });
 
-// Semua route ini dilindungi middleware auth
-Route::middleware('auth')->group(function () {
+// Rute untuk autentikasi
+Route::middleware('guest')->group(function () {
+    Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+    Route::post('/login', [AuthController::class, 'login'])->name('login.process');
+});
 
+// Rute yang memerlukan autentikasi
+Route::middleware('auth')->group(function () {
+    // Logout
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+    
     // Dashboard
     Route::get('/dashboard', function () {
         return view('home.dashboard');
     })->name('dashboard');
-
-    // Simple Page & Shortcodes
+    
+    // Halaman statis
     Route::get('/simple_page', function () {
         return view('home.simple_page');
     })->name('simple_page');
-
+    
     Route::get('/shortcodes', function () {
         return view('home.shortcodes');
     })->name('shortcodes');
-
-    // Profil Pegawai
-    Route::get(
-        '/profil-pegawai',
-        [PegawaiController::class, 'index']
-    )->name('profil_pegawai');
-
-    Route::post(
-        '/profil-pegawai',
-        [PegawaiController::class, 'store']
-    )->name('profil_pegawai.store');
-
-    Route::delete('/profil-pegawai/{user}', [PegawaiController::class, 'destroy'])
-         ->name('profil_pegawai.destroy');
+    
+    // Manajemen Pegawai
+    Route::prefix('profil-pegawai')->group(function () {
+        Route::get('/', [PegawaiController::class, 'index'])->name('profil_pegawai');
+        Route::post('/', [PegawaiController::class, 'store'])->name('profil_pegawai.store');
+        Route::get('/{id}/edit', [PegawaiController::class, 'edit'])->name('profil_pegawai.edit');
+        Route::put('/{id}', [PegawaiController::class, 'update'])->name('profil_pegawai.update');
+        Route::delete('/{user}', [PegawaiController::class, 'destroy'])->name('profil_pegawai.destroy');
+    });
+    
+    // Manajemen Parameter Indikator
+    Route::prefix('parameter-indikator')->group(function () {
+        Route::get('/', [IndicatorParameterController::class, 'index'])->name('parameter-indikator');
+        Route::post('/', [IndicatorParameterController::class, 'store'])->name('parameter-indikator.store');
+        Route::put('/{id}', [IndicatorParameterController::class, 'update'])->name('parameter-indikator.update');
+        Route::delete('/{id}', [IndicatorParameterController::class, 'destroy'])->name('parameter-indikator.destroy');
+    });
 });

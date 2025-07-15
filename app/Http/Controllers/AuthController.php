@@ -33,7 +33,7 @@ class AuthController extends Controller
             $request->session()->regenerate();
 
             // Redirect ke dashboard, atau ke intended URL jika ada
-            return redirect()->intended('/home/dashboard');
+            return redirect()->intended('/dashboard');
         }
 
         // Kembali ke form login dengan error

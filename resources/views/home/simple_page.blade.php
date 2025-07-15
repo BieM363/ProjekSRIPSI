@@ -191,7 +191,7 @@ https://templatemo.com/tm-529-ramayana
                   <span class="opener">Menu Input</span>
                   <ul>
                     <li><a href="{{ route('profil_pegawai') }}">Profil Pegawai</a></li>
-                    <li><a href="#">Parameter Indikator</a></li>
+                    <li><a href="{{ route('parameter-indikator') }}">Parameter Indikator</a></li>
                     <li><a href="#">Realisasi Kinerja</a></li>
                     <li><a href="#">Survei Kepuasan</a></li>
                     <li><a href="#">Sarana & Prasarana</a></li>
