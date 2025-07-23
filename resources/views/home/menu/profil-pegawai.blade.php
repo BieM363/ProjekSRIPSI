@@ -47,10 +47,13 @@
                         <a class="nav-link" href="{{ route('dashboard') }}">Homepage</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('simple_page') }}">Simple Page</a>
+                        <a class="nav-link" href="{{ route('parameter-indikator') }}">Parameter Indikator</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('shortcodes') }}">Shortcodes</a>
+                        <a class="nav-link" href="{{ route('realisasi_kinerja') }}">Realisasi Kinerja</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('profil_pegawai') }}">Profil Pegawai</a>
                     </li>
                     
                     <!-- Dropdown Menu Input -->
@@ -60,9 +63,6 @@
                             Menu Input
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="menuInputDropdown">
-                            <li><a class="dropdown-item active" href="{{ route('profil_pegawai') }}">Profil Pegawai</a></li>
-                            <li><a class="dropdown-item" href="{{ route('parameter-indikator') }}">Parameter Indikator</a></li>
-                            <li><a class="dropdown-item" href="#">Realisasi Kinerja</a></li>
                             <li><a class="dropdown-item" href="#">Survei Kepuasan</a></li>
                             <li><a class="dropdown-item" href="#">Sarana & Prasarana</a></li>
                             <li><a class="dropdown-item" href="#">Data Responden</a></li>

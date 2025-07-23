@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\IndicatorParameterController;
+use App\Http\Controllers\RKinerjaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,15 +35,6 @@ Route::middleware('auth')->group(function () {
         return view('home.dashboard');
     })->name('dashboard');
     
-    // Halaman statis
-    Route::get('/simple_page', function () {
-        return view('home.simple_page');
-    })->name('simple_page');
-    
-    Route::get('/shortcodes', function () {
-        return view('home.shortcodes');
-    })->name('shortcodes');
-    
     // Manajemen Pegawai
     Route::prefix('profil-pegawai')->group(function () {
         Route::get('/', [PegawaiController::class, 'index'])->name('profil_pegawai');
@@ -58,5 +50,15 @@ Route::middleware('auth')->group(function () {
         Route::post('/', [IndicatorParameterController::class, 'store'])->name('parameter-indikator.store');
         Route::put('/{id}', [IndicatorParameterController::class, 'update'])->name('parameter-indikator.update');
         Route::delete('/{id}', [IndicatorParameterController::class, 'destroy'])->name('parameter-indikator.destroy');
+    });
+
+    // Realisasi Kinerja Routes
+    Route::prefix('realisasi-kinerja')->group(function () {
+        Route::get('/', [RKinerjaController::class, 'index'])->name('realisasi_kinerja');
+        Route::get('/create', [RKinerjaController::class, 'create'])->name('realisasi_kinerja.create');
+        Route::post('/', [RKinerjaController::class, 'store'])->name('realisasi_kinerja.store');
+        Route::get('/{id}/edit', [RKinerjaController::class, 'edit'])->name('realisasi_kinerja.edit');
+        Route::put('/{id}', [RKinerjaController::class, 'update'])->name('realisasi_kinerja.update');
+        Route::delete('/{id}', [RKinerjaController::class, 'destroy'])->name('realisasi_kinerja.destroy');
     });
 });
