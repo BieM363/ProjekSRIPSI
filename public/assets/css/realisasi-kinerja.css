@@ -1,0 +1,326 @@
+/* resources/assets/css/realisasi-kinerja.css */
+
+/* ================ GLOBAL STYLES ================ */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+}
+
+.main-content {
+    padding: 20px;
+}
+
+.page-heading {
+    margin-bottom: 30px;
+}
+
+.page-heading h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #6d28d9;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #6d28d9;
+}
+
+/* ================ SUMMARY CARDS ================ */
+.summary-card {
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.summary-card:hover {
+    transform: translateY(-5px);
+}
+
+.summary-card i {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.summary-card h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.summary-card p {
+    font-size: 14px;
+    margin: 0;
+    opacity: 0.9;
+}
+
+.summary-card.bg-primary {
+    background: linear-gradient(135deg, #8B5CF6, #6D28D9);
+}
+
+.summary-card.bg-success {
+    background: linear-gradient(135deg, #10B981, #059669);
+}
+
+.summary-card.bg-warning {
+    background: linear-gradient(135deg, #F59E0B, #D97706);
+}
+
+.summary-card.bg-info {
+    background: linear-gradient(135deg, #0EA5E9, #0284C7);
+}
+
+/* ================ FILTER SECTION ================ */
+.filter-section {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.filter-section .form-label {
+    font-weight: 500;
+    color: #6d28d9;
+}
+
+.filter-section .form-select {
+    border: 1px solid #d8b4fe;
+}
+
+.filter-section .form-select:focus {
+    border-color: #8B5CF6;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.25);
+}
+
+.filter-section .btn-primary {
+    background-color: #6d28d9;
+    border-color: #6d28d9;
+}
+
+.filter-section .btn-primary:hover {
+    background-color: #5b21b6;
+    border-color: #5b21b6;
+}
+
+/* ================ ACTION BAR ================ */
+.action-bar {
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: #6d28d9;
+    border-color: #6d28d9;
+}
+
+.btn-primary:hover {
+    background-color: #5b21b6;
+    border-color: #5b21b6;
+}
+
+.btn-outline-secondary {
+    color: #6d28d9;
+    border-color: #6d28d9;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #6d28d9;
+    color: white;
+}
+
+.input-group .form-control:focus {
+    border-color: #8B5CF6;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.25);
+}
+
+.input-group .btn-outline-primary {
+    color: #6d28d9;
+    border-color: #6d28d9;
+}
+
+.input-group .btn-outline-primary:hover {
+    background-color: #6d28d9;
+    color: white;
+}
+
+/* ================ TABLE STYLES ================ */
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+}
+
+.card-header {
+    background-color: #6d28d9;
+    color: white;
+    font-weight: 600;
+    border-radius: 10px 10px 0 0 !important;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-header .badge {
+    background-color: rgba(255, 255, 255, 0.2);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(109, 40, 217, 0.05);
+}
+
+.table th {
+    background-color: #f5f3ff;
+    color: #6d28d9;
+    font-weight: 600;
+    border-top: 1px solid #e9ecef;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+/* Progress bar styles */
+.progress {
+    background-color: #e9ecef;
+    border-radius: 10px;
+    height: 10px;
+}
+
+.progress-bar {
+    border-radius: 10px;
+}
+
+.progress-bar.bg-success {
+    background-color: #10B981 !important;
+}
+
+.progress-bar.bg-warning {
+    background-color: #F59E0B !important;
+}
+
+.progress-bar.bg-danger {
+    background-color: #EF4444 !important;
+}
+
+/* Status badges */
+.badge {
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 0.85rem;
+}
+
+.badge.bg-success {
+    background-color: #10B981 !important;
+}
+
+.badge.bg-warning {
+    background-color: #F59E0B !important;
+}
+
+.badge.bg-danger {
+    background-color: #EF4444 !important;
+}
+
+/* Action buttons */
+.btn-sm {
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.btn-outline-primary {
+    color: #6d28d9;
+    border-color: #6d28d9;
+}
+
+.btn-outline-primary:hover {
+    background-color: #6d28d9;
+    color: white;
+}
+
+.btn-outline-danger {
+    color: #EF4444;
+    border-color: #EF4444;
+}
+
+.btn-outline-danger:hover {
+    background-color: #EF4444;
+    color: white;
+}
+
+/* ================ CHARTS SECTION ================ */
+.chart-container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    height: 100%;
+}
+
+.chart-container h5 {
+    color: #6d28d9;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.chart-container h5 i {
+    color: #8B5CF6;
+}
+
+/* ================ PAGINATION ================ */
+.pagination {
+    margin-top: 20px;
+}
+
+.page-item.active .page-link {
+    background-color: #6d28d9;
+    border-color: #6d28d9;
+}
+
+.page-link {
+    color: #6d28d9;
+}
+
+.page-link:hover {
+    color: #5b21b6;
+}
+
+/* ================ ALERTS ================ */
+.alert {
+    border-radius: 10px;
+    border: none;
+}
+
+.alert-success {
+    background-color: #10B981;
+    color: white;
+}
+
+.alert-danger {
+    background-color: #EF4444;
+    color: white;
+}
+
+/* ================ RESPONSIVE ADJUSTMENTS ================ */
+@media (max-width: 768px) {
+    .summary-card {
+        margin-bottom: 20px;
+    }
+    
+    .action-bar .d-flex {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .action-bar .d-flex > * {
+        width: 100%;
+    }
+    
+    .action-bar .input-group {
+        margin-top: 10px;
+    }
+}

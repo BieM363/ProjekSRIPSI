@@ -207,9 +207,10 @@
                         <a href="{{ route('realisasi_kinerja.create') }}" class="btn btn-primary me-2">
                             <i class="fas fa-plus me-2"></i>Tambah Realisasi
                         </a>
-                        <button class="btn btn-outline-secondary me-2">
+                        <a href="{{ route('realisasi_kinerja.export', array_merge(request()->query())) }}" 
+                        class="btn btn-outline-secondary me-2">
                             <i class="fas fa-download me-2"></i>Ekspor Data
-                        </button>
+                        </a>
                     </div>
                     <div class="d-flex">
                         <form action="{{ route('realisasi_kinerja') }}" method="GET" class="input-group">

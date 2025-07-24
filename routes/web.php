@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\IndicatorParameterController;
 use App\Http\Controllers\RKinerjaController;
+use App\Http\Controllers\ExportController; // Ditambahkan
 
 /*
 |--------------------------------------------------------------------------
@@ -55,10 +56,12 @@ Route::middleware('auth')->group(function () {
     // Realisasi Kinerja Routes
     Route::prefix('realisasi-kinerja')->group(function () {
         Route::get('/', [RKinerjaController::class, 'index'])->name('realisasi_kinerja');
+        Route::get('/export', [ExportController::class, 'exportRealisasi'])->name('realisasi_kinerja.export'); // Diperbaiki
         Route::get('/create', [RKinerjaController::class, 'create'])->name('realisasi_kinerja.create');
         Route::post('/', [RKinerjaController::class, 'store'])->name('realisasi_kinerja.store');
         Route::get('/{id}/edit', [RKinerjaController::class, 'edit'])->name('realisasi_kinerja.edit');
         Route::put('/{id}', [RKinerjaController::class, 'update'])->name('realisasi_kinerja.update');
         Route::delete('/{id}', [RKinerjaController::class, 'destroy'])->name('realisasi_kinerja.destroy');
     });
+    
 });
